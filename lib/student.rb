@@ -23,7 +23,7 @@ class Student
     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
   end
   def update
-    DB[:conn].execute("UPDATE students SET name= ?, grade= ? WHERE id= ?"self.name,self.grade,self.id)
+    DB[:conn].execute("UPDATE students SET name= ?, grade= ? WHERE id= ?", self.name,self.grade,self.id)
   end
   def create(name,grade)
     new_student= self.new(name,grade)
@@ -45,7 +45,7 @@ class Student
       # find the student in the database given a name
       # return a new instance of the Student class
     end
-  
+
 
   # Remember, you can access your database connection anywhere in this class
   #  with DB[:conn]
