@@ -38,6 +38,8 @@ class Student
       new_song
       # create a new Student object given a row from the database
     end
+    def self.find_by_name
+    end 
 
   # Remember, you can access your database connection anywhere in this class
   #  with DB[:conn]
