@@ -38,8 +38,14 @@ class Student
       new_song
       # create a new Student object given a row from the database
     end
-    def self.find_by_name
-    end 
+    def self.find_by_name(name)
+      DB[:conn].execute("SELECT * FROM students WHERE name= ? LIMIT 1", name).map do |row|
+        self.new_from_db(row)
+      end.first
+      # find the student in the database given a name
+      # return a new instance of the Student class
+    end
+    end
 
   # Remember, you can access your database connection anywhere in this class
   #  with DB[:conn]
