@@ -13,9 +13,15 @@ class Student
   end
   def self.drop_table
     DB[:conn].execute("DROP TABLE students")
-  end 
+  end
+  def save 
+    if self.id 
+      self.update
+    else 
+      DB[:conn].execute("INSERT INTO students (name,grade) VALUES (?,?)",self.name,self.grade)
   # Remember, you can access your database connection anywhere in this class
   #  with DB[:conn]
 
 
 end
+
