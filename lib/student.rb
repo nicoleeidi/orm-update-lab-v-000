@@ -31,7 +31,7 @@ class Student
     new_student
   end
     def self.new_from_db(row)
-      new_song=self.new
+      new_song=self.new(name,grade)
       new_song.id=row[0]
       new_song.name=row[1]
       new_song.grade=row[2]
