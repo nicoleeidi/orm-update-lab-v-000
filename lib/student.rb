@@ -45,7 +45,7 @@ class Student
       # find the student in the database given a name
       # return a new instance of the Student class
     end
-    end
+  
 
   # Remember, you can access your database connection anywhere in this class
   #  with DB[:conn]
